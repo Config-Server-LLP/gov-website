@@ -3,6 +3,7 @@ import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 import { Mail, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function EmployeesGallery() {
   const { t } = useLanguage();
@@ -11,12 +12,12 @@ export function EmployeesGallery() {
   const employees = [
     {
       id: 1,
-      name: 'Rajesh Kumar Singh',
+      name: 'Rinal Singh',
       designation: t.employees.designations.bdo,
       department: t.employees.departments.administration,
       email: 'bdo@panchayat.gov.in',
       phone: '+91 98765 43210',
-      image: '👨‍💼',
+      image: '/images/employee1.jpg',
     },
     {
       id: 2,
@@ -25,7 +26,7 @@ export function EmployeesGallery() {
       department: t.employees.departments.documentation,
       email: 'secretary@panchayat.gov.in',
       phone: '+91 98765 43211',
-      image: '👩‍💼',
+      image: '/images/employee2.jpg',
     },
     {
       id: 3,
@@ -34,16 +35,16 @@ export function EmployeesGallery() {
       department: t.employees.departments.agriculture,
       email: 'agriculture@panchayat.gov.in',
       phone: '+91 98765 43212',
-      image: '👨‍🌾',
+      image: '/images/employee3.jpg',
     },
     {
       id: 4,
-      name: 'Sunita Devi',
+      name: 'Sumit Devi',
       designation: t.employees.designations.welfare,
       department: t.employees.departments.welfare,
       email: 'welfare@panchayat.gov.in',
       phone: '+91 98765 43213',
-      image: '👩‍⚕️',
+      image: '/images/employee4.jpeg',
     },
     {
       id: 5,
@@ -52,25 +53,25 @@ export function EmployeesGallery() {
       department: t.employees.departments.infrastructure,
       email: 'engineering@panchayat.gov.in',
       phone: '+91 98765 43214',
-      image: '👨‍🔧',
+      image: '/images/employee5.jpeg',
     },
     {
       id: 6,
-      name: 'Anita Desai',
+      name: 'Ankit Desai',
       designation: t.employees.designations.education,
       department: t.employees.departments.education,
       email: 'education@panchayat.gov.in',
       phone: '+91 98765 43215',
-      image: '👩‍🏫',
+      image: '/images/employee6.jpeg',
     },
     {
       id: 7,
-      name: 'Manoj Gupta',
+      name: 'Manavi Gupta',
       designation: t.employees.designations.finance,
       department: t.employees.departments.finance,
       email: 'finance@panchayat.gov.in',
       phone: '+91 98765 43216',
-      image: '👨‍💻',
+      image: '/images/employee7.jpeg',
     },
     {
       id: 8,
@@ -79,7 +80,7 @@ export function EmployeesGallery() {
       department: t.employees.departments.health,
       email: 'health@panchayat.gov.in',
       phone: '+91 98765 43217',
-      image: '👩‍⚕️',
+      image: '/images/employee8.jpeg',
     },
     {
       id: 9,
@@ -88,34 +89,7 @@ export function EmployeesGallery() {
       department: t.employees.departments.planning,
       email: 'planning@panchayat.gov.in',
       phone: '+91 98765 43218',
-      image: '👨‍💼',
-    },
-    {
-      id: 10,
-      name: 'Neha Joshi',
-      designation: t.employees.designations.audit,
-      department: t.employees.departments.audit,
-      email: 'audit@panchayat.gov.in',
-      phone: '+91 98765 43219',
-      image: '👩‍💼',
-    },
-    {
-      id: 11,
-      name: 'Rahul Nair',
-      designation: t.employees.designations.technical,
-      department: t.employees.departments.technical,
-      email: 'technical@panchayat.gov.in',
-      phone: '+91 98765 43220',
-      image: '👨‍💻',
-    },
-    {
-      id: 12,
-      name: 'Pooja Iyer',
-      designation: t.employees.designations.coordination,
-      department: t.employees.departments.coordination,
-      email: 'coordination@panchayat.gov.in',
-      phone: '+91 98765 43221',
-      image: '👩‍💼',
+      image: '/images/employee9.jpeg',
     },
   ];
 
@@ -169,10 +143,13 @@ export function EmployeesGallery() {
               key={employee.id}
               className="overflow-hidden hover:shadow-xl transition-all duration-300 group border-none"
             >
-              <div className="relative bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center">
-                <div className="text-7xl group-hover:scale-110 transition-transform duration-300">
-                  {employee.image}
-                </div>
+              <div className="relative bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center overflow-hidden">
+                <ImageWithFallback
+                  src={employee.image}
+                  alt={employee.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  fallbackSrc="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%233b82f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='48' fill='white'%3E👨‍💼%3C/text%3E%3C/svg%3E"
+                />
                 <Badge className="absolute top-4 right-4 bg-white text-blue-700">
                   {employee.department}
                 </Badge>
