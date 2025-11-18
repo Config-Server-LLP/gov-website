@@ -2,13 +2,11 @@ import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 import { Trophy, Award, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 
 export function TalentsGallery() {
   const { t } = useLanguage();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(1);
-  const sliderRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const talents = [
     {
@@ -92,37 +90,117 @@ export function TalentsGallery() {
       icon: '📚',
       color: 'from-rose-500 to-rose-600',
     },
+    // Additional talents for second slide
+    {
+      id: 10,
+      name: 'Sanjay Mehta',
+      achievement: 'National Mathematics Olympiad',
+      category: t.talents.categories.education,
+      year: '2024',
+      description: 'Secured 2nd position in National Mathematics Olympiad with perfect score.',
+      icon: '🧮',
+      color: 'from-blue-600 to-blue-700',
+    },
+    {
+      id: 11,
+      name: 'Neha Joshi',
+      achievement: 'State Badminton Champion',
+      category: t.talents.categories.sports,
+      year: '2024',
+      description: 'Won state level badminton championship in singles category.',
+      icon: '🏸',
+      color: 'from-green-600 to-green-700',
+    },
+    {
+      id: 12,
+      name: 'Rajesh Nair',
+      achievement: 'Innovative Farming Techniques',
+      category: t.talents.categories.agriculture,
+      year: '2024',
+      description: 'Developed water-saving irrigation system for small farmers.',
+      icon: '💧',
+      color: 'from-amber-600 to-amber-700',
+    },
+    {
+      id: 13,
+      name: 'Pooja Iyer',
+      achievement: 'National Debate Competition',
+      category: t.talents.categories.debate,
+      year: '2024',
+      description: 'Best debater in National Youth Parliament on climate change.',
+      icon: '🗣️',
+      color: 'from-purple-600 to-purple-700',
+    },
+    {
+      id: 14,
+      name: 'Manoj Kumar',
+      achievement: 'Traditional Music Preservation',
+      category: t.talents.categories.arts,
+      year: '2023',
+      description: 'Revived and documented traditional folk music of the region.',
+      icon: '🎵',
+      color: 'from-pink-600 to-pink-700',
+    },
+    {
+      id: 15,
+      name: 'Sunita Devi',
+      achievement: 'Rural Entrepreneurship Award',
+      category: t.talents.categories.business,
+      year: '2023',
+      description: 'Established successful handicraft business employing 50 women.',
+      icon: '🏪',
+      color: 'from-indigo-600 to-indigo-700',
+    },
+    {
+      id: 16,
+      name: 'Amit Sharma',
+      achievement: 'District Cricket Captain',
+      category: t.talents.categories.sports,
+      year: '2023',
+      description: 'Led district team to victory in inter-district cricket tournament.',
+      icon: '🏏',
+      color: 'from-cyan-600 to-cyan-700',
+    },
+    {
+      id: 17,
+      name: 'Kavita Singh',
+      achievement: 'Social Welfare Excellence',
+      category: t.talents.categories.socialService,
+      year: '2023',
+      description: 'Organized health camps and education drives in remote villages.',
+      icon: '❤️',
+      color: 'from-orange-600 to-orange-700',
+    },
+    {
+      id: 18,
+      name: 'Rahul Verma',
+      achievement: 'Short Story Writing Competition',
+      category: t.talents.categories.literature,
+      year: '2023',
+      description: 'Winner of national level short story writing competition.',
+      icon: '✍️',
+      color: 'from-rose-600 to-rose-700',
+    },
   ];
 
-  // Calculate cards per view based on screen size
-  useEffect(() => {
-    const updateCardsPerView = () => {
-      if (window.innerWidth >= 1024) {
-        setCardsPerView(3);
-      } else if (window.innerWidth >= 768) {
-        setCardsPerView(2);
-      } else {
-        setCardsPerView(1);
-      }
-    };
-
-    updateCardsPerView();
-    window.addEventListener('resize', updateCardsPerView);
-    return () => window.removeEventListener('resize', updateCardsPerView);
-  }, []);
-
-  const maxIndex = Math.ceil(talents.length / cardsPerView) - 1;
+  const cardsPerSlide = 9; // 9 cards per slide (3 rows × 3 cards)
+  const totalSlides = Math.ceil(talents.length / cardsPerSlide);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const getVisibleTalents = () => {
+    const startIndex = currentSlide * cardsPerSlide;
+    return talents.slice(startIndex, startIndex + cardsPerSlide);
   };
 
   const goToSlide = (index: number) => {
-    setCurrentIndex(index);
+    setCurrentSlide(index);
   };
 
   return (
@@ -139,14 +217,17 @@ export function TalentsGallery() {
 
       {/* Slider Container */}
       <div className="relative">
-        {/* Navigation Arrows */}
-        <button
+        {/* Cards Grid - 3 columns for 3 rows */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+          {/* Left Arrow - Centered */}
+          {totalSlides > 1 && (
+            <button
               onClick={prevSlide}
-              style={{ marginTop: "150px" }}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 z-10 bg-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-green-50 border-2 border-gray-300 hover:border-green-500"
+              style={{ marginTop: "550px" }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-orange-50 border-2 border-gray-300 hover:border-orange-500"
               aria-label="Previous slide"
             >
-              <ChevronLeft className="w-8 h-8 text-gray-800 hover:text-green-700" />
+              <ChevronLeft className="w-8 h-8 text-gray-800 hover:text-orange-700" />
             </button>
 
          <button
@@ -186,43 +267,55 @@ export function TalentsGallery() {
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-gray-900 flex-1">{talent.name}</h3>
-                      <Star className="w-5 h-5 text-yellow-500 flex-shrink-0" />
-                    </div>
-                    
-                    <Badge variant="outline" className="mb-3 text-xs">
-                      {talent.category}
-                    </Badge>
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-gray-900 flex-1">{talent.name}</h3>
+                  <Star className="w-5 h-5 text-yellow-500 flex-shrink-0" />
+                </div>
+                
+                <Badge variant="outline" className="mb-3 text-xs">
+                  {talent.category}
+                </Badge>
 
-                    <p className="text-blue-600 mb-3">{talent.achievement}</p>
-                    
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {talent.description}
-                    </p>
-                  </div>
-                </Card>
+                <p className="text-blue-600 mb-3 font-medium">{talent.achievement}</p>
+                
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {talent.description}
+                </p>
               </div>
+            </Card>
+          ))}
+
+          {/* Right Arrow - Centered */}
+          {totalSlides > 1 && (
+            <button
+              onClick={nextSlide}
+              style={{ marginTop: "550px" }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-orange-50 border-2 border-gray-300 hover:border-orange-500"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-8 h-8 text-gray-800 hover:text-orange-700" />
+            </button>
+          )}
+        </div>
+
+        {/* Slide Indicators */}
+        {totalSlides > 1 && (
+          <div className="flex justify-center mt-8 space-x-3">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                  index === currentSlide 
+                    ? 'bg-orange-500' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
             ))}
           </div>
-        </div>
-
-        {/* Dots Indicator */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? 'bg-orange-500 scale-125'
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
+        )}
       </div>
 
       <div className="mt-12 text-center">
