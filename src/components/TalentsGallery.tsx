@@ -14,7 +14,6 @@ export function TalentsGallery() {
       name: 'Ravi Kumar',
       achievement: 'National Science Olympiad Gold Medal',
       category: t.talents.categories.education,
-      year: '2024',
       description: 'Secured 1st position in the National Science Olympiad representing our region.',
       icon: '🎓',
       color: 'from-blue-500 to-blue-600',
@@ -24,7 +23,7 @@ export function TalentsGallery() {
       name: 'Meera Patel',
       achievement: 'State Level Sports Championship',
       category: t.talents.categories.sports,
-      year: '2024',
+      
       description: 'Won gold medal in 400m sprint at State Athletic Championship.',
       icon: '🏃‍♀️',
       color: 'from-green-500 to-green-600',
@@ -34,7 +33,7 @@ export function TalentsGallery() {
       name: 'Arjun Singh',
       achievement: 'Best Organic Farmer Award',
       category: t.talents.categories.agriculture,
-      year: '2024',
+      
       description: 'Recognized for innovative organic farming practices and high yield production.',
       icon: '🌾',
       color: 'from-amber-500 to-amber-600',
@@ -44,7 +43,7 @@ export function TalentsGallery() {
       name: 'Priyanka Sharma',
       achievement: 'State Youth Parliament Winner',
       category: t.talents.categories.debate,
-      year: '2024',
+      
       description: 'Best speaker at State Youth Parliament on social development issues.',
       icon: '🎤',
       color: 'from-purple-500 to-purple-600',
@@ -54,7 +53,7 @@ export function TalentsGallery() {
       name: 'Karan Desai',
       achievement: 'Traditional Art Excellence Award',
       category: t.talents.categories.arts,
-      year: '2023',
+      
       description: 'Recognized for preserving and promoting traditional art forms.',
       icon: '🎨',
       color: 'from-pink-500 to-pink-600',
@@ -64,7 +63,7 @@ export function TalentsGallery() {
       name: 'Sneha Reddy',
       achievement: 'Young Entrepreneur Award',
       category: t.talents.categories.business,
-      year: '2023',
+      
       description: 'Started successful self-help group supporting women empowerment.',
       icon: '💼',
       color: 'from-indigo-500 to-indigo-600',
@@ -74,7 +73,7 @@ export function TalentsGallery() {
       name: 'Rohit Verma',
       achievement: 'District Chess Champion',
       category: t.talents.categories.sports,
-      year: '2023',
+      
       description: 'Won district level chess championship and qualified for state level.',
       icon: '♟️',
       color: 'from-cyan-500 to-cyan-600',
@@ -84,7 +83,7 @@ export function TalentsGallery() {
       name: 'Anjali Gupta',
       achievement: 'Community Service Recognition',
       category: t.talents.categories.socialService,
-      year: '2023',
+      
       description: 'Outstanding contribution in village cleanliness and awareness campaigns.',
       icon: '🤝',
       color: 'from-orange-500 to-orange-600',
@@ -94,7 +93,7 @@ export function TalentsGallery() {
       name: 'Vikash Yadav',
       achievement: 'District Level Poetry Competition',
       category: t.talents.categories.literature,
-      year: '2023',
+      
       description: 'Winner of district level Hindi poetry competition.',
       icon: '📚',
       color: 'from-rose-500 to-rose-600',
@@ -105,7 +104,7 @@ export function TalentsGallery() {
       name: 'Sanjay Mehta',
       achievement: 'National Mathematics Olympiad',
       category: t.talents.categories.education,
-      year: '2024',
+      
       description: 'Secured 2nd position in National Mathematics Olympiad with perfect score.',
       icon: '🧮',
       color: 'from-blue-600 to-blue-700',
@@ -115,7 +114,7 @@ export function TalentsGallery() {
       name: 'Neha Joshi',
       achievement: 'State Badminton Champion',
       category: t.talents.categories.sports,
-      year: '2024',
+     
       description: 'Won state level badminton championship in singles category.',
       icon: '🏸',
       color: 'from-green-600 to-green-700',
@@ -125,7 +124,7 @@ export function TalentsGallery() {
       name: 'Rajesh Nair',
       achievement: 'Innovative Farming Techniques',
       category: t.talents.categories.agriculture,
-      year: '2024',
+      
       description: 'Developed water-saving irrigation system for small farmers.',
       icon: '💧',
       color: 'from-amber-600 to-amber-700',
@@ -135,7 +134,7 @@ export function TalentsGallery() {
       name: 'Pooja Iyer',
       achievement: 'National Debate Competition',
       category: t.talents.categories.debate,
-      year: '2024',
+      
       description: 'Best debater in National Youth Parliament on climate change.',
       icon: '🗣️',
       color: 'from-purple-600 to-purple-700',
@@ -145,7 +144,7 @@ export function TalentsGallery() {
       name: 'Manoj Kumar',
       achievement: 'Traditional Music Preservation',
       category: t.talents.categories.arts,
-      year: '2023',
+      
       description: 'Revived and documented traditional folk music of the region.',
       icon: '🎵',
       color: 'from-pink-600 to-pink-700',
@@ -155,7 +154,7 @@ export function TalentsGallery() {
       name: 'Sunita Devi',
       achievement: 'Rural Entrepreneurship Award',
       category: t.talents.categories.business,
-      year: '2023',
+      
       description: 'Established successful handicraft business employing 50 women.',
       icon: '🏪',
       color: 'from-indigo-600 to-indigo-700',
@@ -165,7 +164,7 @@ export function TalentsGallery() {
       name: 'Amit Sharma',
       achievement: 'District Cricket Captain',
       category: t.talents.categories.sports,
-      year: '2023',
+      
       description: 'Led district team to victory in inter-district cricket tournament.',
       icon: '🏏',
       color: 'from-cyan-600 to-cyan-700',
@@ -175,7 +174,7 @@ export function TalentsGallery() {
       name: 'Kavita Singh',
       achievement: 'Social Welfare Excellence',
       category: t.talents.categories.socialService,
-      year: '2023',
+   
       description: 'Organized health camps and education drives in remote villages.',
       icon: '❤️',
       color: 'from-orange-600 to-orange-700',
@@ -185,7 +184,7 @@ export function TalentsGallery() {
       name: 'Rahul Verma',
       achievement: 'Short Story Writing Competition',
       category: t.talents.categories.literature,
-      year: '2023',
+     
       description: 'Winner of national level short story writing competition.',
       icon: '✍️',
       color: 'from-rose-600 to-rose-700',
