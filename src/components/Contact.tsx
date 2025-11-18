@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle } from 'lucide-react';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -32,30 +32,6 @@ export function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: t.contact.emailTitle,
-      content: 'contact@panchayatsamiti.gov.in',
-      subContent: 'info@panchayatsamiti.gov.in',
-      color: 'from-blue-500 to-blue-600',
-    },
-    {
-      icon: Phone,
-      title: t.contact.phoneTitle,
-      content: '+91 (0XXX) 123-4567',
-      subContent: `${t.map.contact.helpline} +91 98765 43210`,
-      color: 'from-green-500 to-green-600',
-    },
-    {
-      icon: MapPin,
-      title: t.contact.addressTitle,
-      content: `${t.map.address.line1}, ${t.map.address.line2}`,
-      subContent: `${t.map.address.line3}, ${t.map.address.line4}`,
-      color: 'from-orange-500 to-orange-600',
-    },
-  ];
-
   return (
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
@@ -68,25 +44,8 @@ export function Contact() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6 mb-12">
-        {contactInfo.map((info, index) => {
-          const Icon = info.icon;
-          return (
-            <Card key={index} className="p-6 border-none shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className={`w-14 h-14 bg-gradient-to-br ${info.color} rounded-lg flex items-center justify-center mb-4`}>
-                <Icon className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-gray-900 mb-2">{info.title}</h3>
-              <p className="text-gray-700 mb-1">{info.content}</p>
-              <p className="text-sm text-gray-600">{info.subContent}</p>
-            </Card>
-          );
-        })}
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-12">
-        {/* Contact Form */}
-        <Card className="p-8 border-none shadow-xl">
+      <div className="flex justify-center">
+        <Card className="p-8 border-none shadow-xl max-w-2xl w-full">
           <h3 className="text-2xl text-gray-900 mb-6">{t.contact.formTitle}</h3>
           
           {submitted ? (
@@ -179,59 +138,6 @@ export function Contact() {
             </form>
           )}
         </Card>
-
-        {/* Additional Information */}
-        <div className="space-y-6">
-          <Card className="p-8 border-none shadow-xl bg-gradient-to-br from-blue-50 to-white">
-            <h3 className="text-2xl text-gray-900 mb-4">{t.contact.officeHoursTitle}</h3>
-            <div className="space-y-4">
-              <div className="flex justify-between py-3 border-b border-gray-200">
-                <span className="text-gray-700">{t.map.hours.weekday}</span>
-                <span className="text-gray-900">{t.map.hours.weekdayTime}</span>
-              </div>
-              <div className="flex justify-between py-3 border-b border-gray-200">
-                <span className="text-gray-700">{t.map.hours.saturday}</span>
-                <span className="text-gray-900">{t.map.hours.saturdayTime}</span>
-              </div>
-              <div className="flex justify-between py-3">
-                <span className="text-gray-700">{t.map.hours.sunday}</span>
-                <span className="text-red-600">{t.map.hours.sundayStatus}</span>
-              </div>
-              <div className="mt-4 p-4 bg-blue-100 rounded-lg">
-                <p className="text-sm text-blue-900">
-                  <span>{t.map.hours.lunchBreak}</span>
-                </p>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-8 border-none shadow-xl bg-gradient-to-br from-orange-50 to-white">
-            <h3 className="text-2xl text-gray-900 mb-4">{t.contact.emergencyTitle}</h3>
-            <p className="text-gray-600 mb-4">
-              {t.contact.emergencyDesc}
-            </p>
-            <div className="flex items-center gap-3 p-4 bg-orange-100 rounded-lg">
-              <Phone className="w-6 h-6 text-orange-600" />
-              <div>
-                <p className="text-sm text-gray-600">{t.contact.emergencyLabel}</p>
-                <p className="text-xl text-orange-900">1800-XXX-XXXX</p>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-8 border-none shadow-xl bg-gradient-to-br from-green-50 to-white">
-            <h3 className="text-2xl text-gray-900 mb-4">{t.contact.grievanceTitle}</h3>
-            <p className="text-gray-600 mb-4">
-              {t.contact.grievanceDesc}
-            </p>
-            <Button
-              variant="outline"
-              className="w-full border-green-600 text-green-700 hover:bg-green-50"
-            >
-              {t.contact.grievanceButton}
-            </Button>
-          </Card>
-        </div>
       </div>
     </div>
   );
