@@ -42,7 +42,7 @@ export function SchemesGallery() {
         'Registered government departments',
         'Valid login credentials required',
       ],
-      image: ZPFMSImage, // Use the imported image
+      image: ZPFMSImage,
       externalLink: 'https://www.zpfms.com/login.aspx'
     },
     {
@@ -205,9 +205,190 @@ export function SchemesGallery() {
       ],
       image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwaW5kaWF8ZW58MXx8fHwxNzYzMzcxNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080',
     },
+    // Additional schemes for second slide
+    {
+      id: 10,
+      title: 'Pradhan Mantri Awas Yojana',
+      category: t.schemes.categories.housing,
+      description:
+        'Housing for All by 2022 mission provides affordable housing to the urban poor with a target of building 20 million affordable houses.',
+      benefits: [
+        'Interest subsidy on home loans',
+        'Financial assistance for construction',
+        'Preference to women and senior citizens',
+        'Infrastructure development support',
+      ],
+      eligibility: [
+        'Economically weaker sections',
+        'Low income groups',
+        'Women and senior citizens',
+        'First-time home buyers',
+      ],
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3VzaW5nJTIwaW5kaWF8ZW58MXx8fHwxNzYzMzcxNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    },
+    {
+      id: 11,
+      title: 'National Rural Livelihood Mission',
+      category: t.schemes.categories.employment,
+      description:
+        'A poverty alleviation project focused on promoting self-employment and organization of rural poor through Self Help Groups.',
+      benefits: [
+        'Financial inclusion through bank linkages',
+        'Skill development and training',
+        'Market access for products',
+        'Social mobilization and empowerment',
+      ],
+      eligibility: [
+        'Rural poor families',
+        'Women from below poverty line',
+        'Members of Self Help Groups',
+        'Willingness to participate in training',
+      ],
+      image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxydXJhbCUyMGVtcGxveW1lbnR8ZW58MXx8fHwxNzYzMzcxNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    },
+    {
+      id: 12,
+      title: 'National Health Mission',
+      category: t.schemes.categories.healthcare,
+      description:
+        'Comprehensive healthcare initiative to address health needs of rural and urban populations through strengthening health systems.',
+      benefits: [
+        'Free diagnostic services',
+        'Maternal and child healthcare',
+        'Preventive healthcare programs',
+        'Health infrastructure development',
+      ],
+      eligibility: [
+        'All citizens in rural and urban areas',
+        'Pregnant women and children',
+        'Economically disadvantaged groups',
+        'Residents of underserved areas',
+      ],
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaW5kaWF8ZW58MXx8fHwxNzYzMzcxNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    },
+    {
+      id: 13,
+      title: 'Skill India Mission',
+      category: t.schemes.categories.employment,
+      description:
+        'A national campaign to train over 400 million people in different skills by 2022 to boost employment and entrepreneurship.',
+      benefits: [
+        'Industry-relevant skill training',
+        'Certification and placement assistance',
+        'Financial support for training',
+        'Entrepreneurship development',
+      ],
+      eligibility: [
+        'Indian citizens above 15 years',
+        'School dropouts and unemployed youth',
+        'Women and disadvantaged groups',
+        'Willingness to undergo training',
+      ],
+      image: 'https://images.unsplash.com/photo-1551836026-d5c8c2a2294c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxza2lsbCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc2MzM3MTcwOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    },
+    {
+      id: 14,
+      title: 'Startup India',
+      category: t.schemes.categories.technology,
+      description:
+        'An initiative to build a strong ecosystem for nurturing innovation and startups to drive sustainable economic growth.',
+      benefits: [
+        'Tax exemptions for 3 years',
+        'Simplified compliance regime',
+        'Funding support and incentives',
+        'Intellectual property rights support',
+      ],
+      eligibility: [
+        'Registered startups in India',
+        'Innovative business ideas',
+        'Companies less than 5 years old',
+        'Annual turnover under ₹100 crore',
+      ],
+      image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGFydHVwJTIwaW5kaWF8ZW58MXx8fHwxNzYzMzcxNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    },
+    {
+      id: 15,
+      title: 'Smart Cities Mission',
+      category: t.schemes.categories.infrastructure,
+      description:
+        'An urban renewal program to develop 100 cities across India making them citizen-friendly and sustainable.',
+      benefits: [
+        'Improved urban infrastructure',
+        'Smart solutions for utilities',
+        'Enhanced quality of life',
+        'Economic growth opportunities',
+      ],
+      eligibility: [
+        'Residents of selected smart cities',
+        'Urban local bodies',
+        'Private sector partners',
+        'Infrastructure developers',
+      ],
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGNpdHl8ZW58MXx8fHwxNzYzMzcxNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    },
+    {
+      id: 16,
+      title: 'Atal Pension Yojana',
+      category: t.schemes.categories.finance,
+      description:
+        'A pension scheme focused on the unorganized sector to provide old age income security with guaranteed returns.',
+      benefits: [
+        'Guaranteed minimum pension',
+        'Flexible contribution options',
+        'Government co-contribution',
+        'Tax benefits under Section 80CCD',
+      ],
+      eligibility: [
+        'Indian citizens between 18-40 years',
+        'Bank account with Aadhaar linkage',
+        'Unorganized sector workers',
+        'No income tax payer',
+      ],
+      image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZW5zaW9uJTIwc2NoZW1lfGVufDF8fHx8MTc2MzM3MTcwOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    },
+    {
+      id: 17,
+      title: 'Pradhan Mantri Jan Dhan Yojana',
+      category: t.schemes.categories.finance,
+      description:
+        'National mission for financial inclusion to ensure access to financial services like banking, credit, insurance.',
+      benefits: [
+        'Zero balance bank account',
+        'RuPay debit card with insurance',
+        'Overdraft facility',
+        'Direct benefit transfer',
+      ],
+      eligibility: [
+        'All Indian citizens',
+        'No existing bank account',
+        'Valid Aadhaar card',
+        'Age 10 years and above',
+      ],
+      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5raW5nJTIwaW5kaWF8ZW58MXx8fHwxNzYzMzcxNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    },
+    {
+      id: 18,
+      title: 'National Education Policy',
+      category: t.schemes.categories.education,
+      description:
+        'Comprehensive framework to transform the education system in India with focus on holistic development and skills.',
+      benefits: [
+        'Multidisciplinary education',
+        'Flexible curriculum choices',
+        'Digital and online learning',
+        'Vocational training integration',
+      ],
+      eligibility: [
+        'All students in India',
+        'Educational institutions',
+        'Teachers and educators',
+        'Skill development centers',
+      ],
+      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBzeXN0ZW18ZW58MXx8fHwxNzYzMzcxNzA4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    },
   ];
 
-  const cardsPerSlide = 3;
+  const cardsPerSlide = 9; // 9 cards per slide (3 rows × 3 cards)
   const totalSlides = Math.ceil(schemes.length / cardsPerSlide);
 
   const nextSlide = () => {
@@ -243,21 +424,21 @@ export function SchemesGallery() {
 
       {/* Slider Container */}
       <div className="relative">
-        {/* Cards Grid */}
+        {/* Cards Grid - 3 columns for 3 rows */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
-          {/* Left Arrow - LARGE SIZE */}
+          {/* Left Arrow - Centered */}
           {totalSlides > 1 && (
             <button
               onClick={prevSlide}
-              style={{ marginTop: "150px" }}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 z-10 bg-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-green-50 border-2 border-gray-300 hover:border-green-500"
+               style={{ marginTop: "550px" }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-green-50 border-2 border-gray-300 hover:border-green-500"
               aria-label="Previous slide"
             >
               <ChevronLeft className="w-8 h-8 text-gray-800 hover:text-green-700" />
             </button>
           )}
 
-          {/* Scheme Cards */}
+          {/* Scheme Cards - 9 cards displayed in 3×3 grid */}
           {getVisibleSchemes().map((scheme) => (
             <Card
               key={scheme.id}
@@ -301,12 +482,13 @@ export function SchemesGallery() {
             </Card>
           ))}
 
-          {/* Right Arrow - LARGE SIZE */}
+          {/* Right Arrow - Centered */}
           {totalSlides > 1 && (
             <button
               onClick={nextSlide}
-              style={{ marginTop: "150px" }}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 z-10 bg-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-green-50 border-2 border-gray-300 hover:border-green-500"
+                             style={{ marginTop: "550px" }}
+
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-white rounded-full p-4 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:bg-green-50 border-2 border-gray-300 hover:border-green-500"
               aria-label="Next slide"
             >
               <ChevronRight className="w-8 h-8 text-gray-800 hover:text-green-700" />

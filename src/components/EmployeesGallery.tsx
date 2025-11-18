@@ -12,7 +12,7 @@ export function EmployeesGallery() {
   const employees = [
     {
       id: 1,
-      name: 'Rinal Singh',
+      name: 'R Singh',
       designation: t.employees.designations.bdo,
       department: t.employees.departments.administration,
       email: 'bdo@panchayat.gov.in',
