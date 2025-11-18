@@ -144,8 +144,6 @@ export const translations = {
       officeAddress: 'Office Address',
       officeHours: 'Office Hours',
       contactNumbers: 'Contact Numbers',
-      getDirections: 'Get Directions',
-      directionsDesc: 'Navigate to our office using your preferred maps application',
       address: {
         line1: 'Panchayat Samiti Office',
         line2: 'Block Development Office',
@@ -372,8 +370,6 @@ export const translations = {
       officeAddress: 'कार्यालय पत्ता',
       officeHours: 'कार्यालयीन वेळ',
       contactNumbers: 'संपर्क क्रमांक',
-      getDirections: 'दिशानिर्देश मिळवा',
-      directionsDesc: 'आपल्या पसंतीच्या नकाशा अनुप्रयोगाचा वापर करून आमच्या कार्यालयात जा',
       address: {
         line1: 'पंचायत समिती कार्यालय',
         line2: 'विकास खंड कार्यालय',

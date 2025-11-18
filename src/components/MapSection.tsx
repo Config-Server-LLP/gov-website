@@ -1,4 +1,4 @@
-import { MapPin, Navigation, Phone, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock } from 'lucide-react';
 import { Card } from './ui/card';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -118,18 +118,6 @@ export function MapSection() {
                   <p><span>{t.map.contact.helpline}</span> +91 98765 43210</p>
                   <p><span>{t.map.contact.fax}</span> +91 (0XXX) 123-4568</p>
                 </div>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-6 bg-gradient-to-br from-blue-600 to-blue-700 border-none shadow-lg hover:shadow-xl transition-shadow">
-            <div className="flex items-center gap-3 text-white">
-              <Navigation className="w-6 h-6" />
-              <div>
-                <h3 className="mb-1">{t.map.getDirections}</h3>
-                <p className="text-sm text-blue-100">
-                  {t.map.directionsDesc}
-                </p>
               </div>
             </div>
           </Card>
