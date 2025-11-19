@@ -3,6 +3,7 @@ import { Badge } from './ui/badge';
 import { Trophy, Award, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useState } from 'react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function TalentsGallery() {
   const { t } = useLanguage();
@@ -15,7 +16,7 @@ export function TalentsGallery() {
       achievement: 'National Science Olympiad Gold Medal',
       category: t.talents.categories.education,
       description: 'Secured 1st position in the National Science Olympiad representing our region.',
-      icon: '🎓',
+      image: 'images/card1.jpg',
       color: 'from-blue-500 to-blue-600',
     },
     {
@@ -23,9 +24,8 @@ export function TalentsGallery() {
       name: 'Meera Patel',
       achievement: 'State Level Sports Championship',
       category: t.talents.categories.sports,
-      
       description: 'Won gold medal in 400m sprint at State Athletic Championship.',
-      icon: '🏃‍♀️',
+      image: 'images/card2.jpg',
       color: 'from-green-500 to-green-600',
     },
     {
@@ -33,9 +33,8 @@ export function TalentsGallery() {
       name: 'Arjun Singh',
       achievement: 'Best Organic Farmer Award',
       category: t.talents.categories.agriculture,
-      
       description: 'Recognized for innovative organic farming practices and high yield production.',
-      icon: '🌾',
+      image: 'images/card3.jpg',
       color: 'from-amber-500 to-amber-600',
     },
     {
@@ -43,9 +42,8 @@ export function TalentsGallery() {
       name: 'Priyanka Sharma',
       achievement: 'State Youth Parliament Winner',
       category: t.talents.categories.debate,
-      
       description: 'Best speaker at State Youth Parliament on social development issues.',
-      icon: '🎤',
+      image: 'images/card4.jpg',
       color: 'from-purple-500 to-purple-600',
     },
     {
@@ -53,9 +51,8 @@ export function TalentsGallery() {
       name: 'Karan Desai',
       achievement: 'Traditional Art Excellence Award',
       category: t.talents.categories.arts,
-      
       description: 'Recognized for preserving and promoting traditional art forms.',
-      icon: '🎨',
+      image: 'images/card5.jpg',
       color: 'from-pink-500 to-pink-600',
     },
     {
@@ -63,9 +60,8 @@ export function TalentsGallery() {
       name: 'Sneha Reddy',
       achievement: 'Young Entrepreneur Award',
       category: t.talents.categories.business,
-      
       description: 'Started successful self-help group supporting women empowerment.',
-      icon: '💼',
+      image: 'images/card6.jpg',
       color: 'from-indigo-500 to-indigo-600',
     },
     {
@@ -73,9 +69,8 @@ export function TalentsGallery() {
       name: 'Rohit Verma',
       achievement: 'District Chess Champion',
       category: t.talents.categories.sports,
-      
       description: 'Won district level chess championship and qualified for state level.',
-      icon: '♟️',
+      image: 'images/card7.jpg',
       color: 'from-cyan-500 to-cyan-600',
     },
     {
@@ -83,9 +78,8 @@ export function TalentsGallery() {
       name: 'Anjali Gupta',
       achievement: 'Community Service Recognition',
       category: t.talents.categories.socialService,
-      
       description: 'Outstanding contribution in village cleanliness and awareness campaigns.',
-      icon: '🤝',
+      image: 'images/card8.jpg',
       color: 'from-orange-500 to-orange-600',
     },
     {
@@ -93,9 +87,8 @@ export function TalentsGallery() {
       name: 'Vikash Yadav',
       achievement: 'District Level Poetry Competition',
       category: t.talents.categories.literature,
-      
       description: 'Winner of district level Hindi poetry competition.',
-      icon: '📚',
+      image: 'images/card9.jpg',
       color: 'from-rose-500 to-rose-600',
     },
     // Additional talents for second slide
@@ -104,9 +97,8 @@ export function TalentsGallery() {
       name: 'Sanjay Mehta',
       achievement: 'National Mathematics Olympiad',
       category: t.talents.categories.education,
-      
       description: 'Secured 2nd position in National Mathematics Olympiad with perfect score.',
-      icon: '🧮',
+      image: 'images/card10.jpg',
       color: 'from-blue-600 to-blue-700',
     },
     {
@@ -114,81 +106,73 @@ export function TalentsGallery() {
       name: 'Neha Joshi',
       achievement: 'State Badminton Champion',
       category: t.talents.categories.sports,
-     
       description: 'Won state level badminton championship in singles category.',
-      icon: '🏸',
+      image: 'images/card11.jpg',
       color: 'from-green-600 to-green-700',
     },
-    {
-      id: 12,
-      name: 'Rajesh Nair',
-      achievement: 'Innovative Farming Techniques',
-      category: t.talents.categories.agriculture,
-      
-      description: 'Developed water-saving irrigation system for small farmers.',
-      icon: '💧',
-      color: 'from-amber-600 to-amber-700',
-    },
-    {
-      id: 13,
-      name: 'Pooja Iyer',
-      achievement: 'National Debate Competition',
-      category: t.talents.categories.debate,
-      
-      description: 'Best debater in National Youth Parliament on climate change.',
-      icon: '🗣️',
-      color: 'from-purple-600 to-purple-700',
-    },
-    {
-      id: 14,
-      name: 'Manoj Kumar',
-      achievement: 'Traditional Music Preservation',
-      category: t.talents.categories.arts,
-      
-      description: 'Revived and documented traditional folk music of the region.',
-      icon: '🎵',
-      color: 'from-pink-600 to-pink-700',
-    },
-    {
-      id: 15,
-      name: 'Sunita Devi',
-      achievement: 'Rural Entrepreneurship Award',
-      category: t.talents.categories.business,
-      
-      description: 'Established successful handicraft business employing 50 women.',
-      icon: '🏪',
-      color: 'from-indigo-600 to-indigo-700',
-    },
-    {
-      id: 16,
-      name: 'Amit Sharma',
-      achievement: 'District Cricket Captain',
-      category: t.talents.categories.sports,
-      
-      description: 'Led district team to victory in inter-district cricket tournament.',
-      icon: '🏏',
-      color: 'from-cyan-600 to-cyan-700',
-    },
-    {
-      id: 17,
-      name: 'Kavita Singh',
-      achievement: 'Social Welfare Excellence',
-      category: t.talents.categories.socialService,
-   
-      description: 'Organized health camps and education drives in remote villages.',
-      icon: '❤️',
-      color: 'from-orange-600 to-orange-700',
-    },
-    {
-      id: 18,
-      name: 'Rahul Verma',
-      achievement: 'Short Story Writing Competition',
-      category: t.talents.categories.literature,
-     
-      description: 'Winner of national level short story writing competition.',
-      icon: '✍️',
-      color: 'from-rose-600 to-rose-700',
-    },
+    // {
+    //   id: 12,
+    //   name: 'Rajesh Nair',
+    //   achievement: 'Innovative Farming Techniques',
+    //   category: t.talents.categories.agriculture,
+    //   description: 'Developed water-saving irrigation system for small farmers.',
+    //   image: '/images/card12.jpg',
+    //   color: 'from-amber-600 to-amber-700',
+    // },
+    // {
+    //   id: 13,
+    //   name: 'Pooja Iyer',
+    //   achievement: 'National Debate Competition',
+    //   category: t.talents.categories.debate,
+    //   description: 'Best debater in National Youth Parliament on climate change.',
+    //   image: '/images/talent13.jpg',
+    //   color: 'from-purple-600 to-purple-700',
+    // },
+    // {
+    //   id: 14,
+    //   name: 'Manoj Kumar',
+    //   achievement: 'Traditional Music Preservation',
+    //   category: t.talents.categories.arts,
+    //   description: 'Revived and documented traditional folk music of the region.',
+    //   image: '/images/talent14.jpg',
+    //   color: 'from-pink-600 to-pink-700',
+    // },
+    // {
+    //   id: 15,
+    //   name: 'Sunita Devi',
+    //   achievement: 'Rural Entrepreneurship Award',
+    //   category: t.talents.categories.business,
+    //   description: 'Established successful handicraft business employing 50 women.',
+    //   image: '/images/talent15.jpg',
+    //   color: 'from-indigo-600 to-indigo-700',
+    // },
+    // {
+    //   id: 16,
+    //   name: 'Amit Sharma',
+    //   achievement: 'District Cricket Captain',
+    //   category: t.talents.categories.sports,
+    //   description: 'Led district team to victory in inter-district cricket tournament.',
+    //   image: '/images/talent16.jpg',
+    //   color: 'from-cyan-600 to-cyan-700',
+    // },
+    // {
+    //   id: 17,
+    //   name: 'Kavita Singh',
+    //   achievement: 'Social Welfare Excellence',
+    //   category: t.talents.categories.socialService,
+    //   description: 'Organized health camps and education drives in remote villages.',
+    //   image: '/images/talent17.jpg',
+    //   color: 'from-orange-600 to-orange-700',
+    // },
+    // {  
+    //   id: 18,
+    //   name: 'Rahul Verma',
+    //   achievement: 'Short Story Writing Competition',
+    //   category: t.talents.categories.literature,
+    //   description: 'Winner of national level short story writing competition.',
+    //   image: '/images/talent18.jpg',
+    //   color: 'from-rose-600 to-rose-700',
+    // },
   ];
 
   const cardsPerSlide = 9; // 9 cards per slide (3 rows × 3 cards)
@@ -243,35 +227,45 @@ export function TalentsGallery() {
           {getVisibleTalents().map((talent) => (
             <Card
               key={talent.id}
-              className="overflow-hidden hover:shadow-xl transition-all duration-300 group border-none h-full"
+              className="overflow-hidden hover:shadow-xl transition-all duration-300 group border-none h-full flex flex-col"
             >
-              <div className={`relative bg-gradient-to-br ${talent.color} h-40 flex items-center justify-center`}>
-                <div className="text-6xl group-hover:scale-110 transition-transform duration-300">
-                  {talent.icon}
-                </div>
-                <Badge className="absolute top-4 right-4 bg-white/90 text-gray-900">
-                  {talent.year}
-                </Badge>
-                <div className="absolute top-4 left-4">
-                  <Trophy className="w-6 h-6 text-white/80" />
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-gray-900 flex-1">{talent.name}</h3>
-                  <Star className="w-5 h-5 text-yellow-500 flex-shrink-0" />
-                </div>
-                
-                <Badge variant="outline" className="mb-3 text-xs">
+              {/* Image Section - Replaced emoji with actual image */}
+              <div className={`relative bg-gradient-to-br ${talent.color} h-48 flex items-center justify-center overflow-hidden`}>
+                <ImageWithFallback
+                  src={talent.image}
+                  alt={talent.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  fallbackSrc="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%233b82f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='48' fill='white'%3E🏆%3C/text%3E%3C/svg%3E"
+                />
+                <Badge className="absolute top-4 right-4 bg-white/90 text-gray-900 backdrop-blur-sm">
                   {talent.category}
                 </Badge>
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
+                  <Trophy className="w-5 h-5 text-yellow-600" />
+                </div>
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
 
-                <p className="text-blue-600 mb-3 font-medium">{talent.achievement}</p>
+              {/* Content Section */}
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-gray-900 font-semibold text-lg flex-1">{talent.name}</h3>
+                  <Star className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-1" />
+                </div>
                 
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-blue-600 mb-3 font-medium leading-tight">{talent.achievement}</p>
+                
+                <p className="text-sm text-gray-600 leading-relaxed flex-grow">
                   {talent.description}
                 </p>
+
+                {/* Achievement Badge */}
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <Badge variant="outline" className="text-xs bg-gray-50">
+                    {talent.category}
+                  </Badge>
+                </div>
               </div>
             </Card>
           ))}

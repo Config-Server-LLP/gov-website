@@ -75,11 +75,11 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
 
           {/* 🔥 Updated Logo Here */}
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg">
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shadow-xl flex items-center justify-center bg-white">
               <img
-                src="src\components\images\download.ico"
+                src="src/components/images/download.ico"
                 alt="Maharashtra Government Logo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
 
@@ -122,10 +122,10 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
                     </span>
                   </div>
                 </div>
-                <ChevronDown 
+                <ChevronDown
                   className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
                     isLanguageOpen ? 'rotate-180' : ''
-                  }`} 
+                  }`}
                 />
               </button>
 
@@ -169,10 +169,10 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
                     </span>
                   </div>
                 </div>
-                <ChevronDown 
+                <ChevronDown
                   className={`w-3 h-3 text-gray-500 transition-transform duration-200 ${
                     isMobileLanguageOpen ? 'rotate-180' : ''
-                  }`} 
+                  }`}
                 />
               </button>
 
